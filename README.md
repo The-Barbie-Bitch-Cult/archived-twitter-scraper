@@ -5,9 +5,9 @@ Listen up, queens and chaos agents: this script is your digital Ouija board for 
 This tool is for archival and research purposes only. Respect robots.txt where applicable, follow all local laws, and don’t be a creep or a criminal with it. Don’t use this for harassment, doxxing, or anything that would make Karma side-eye you. Use responsibly.
 
 
-# The Twitter Archive Scaper
+# The Twitter Archive Scraper
 
-The Twitter Archive Scaper is an interactive command-line tool that searches the
+The Twitter Archive Scraper is an interactive command-line tool that searches the
 Internet Archive for preserved Twitter/X tweets from a handle, saves the tweet
 date/text/archive link into a CSV file, and downloads any preserved tweet images
 that it can find.
@@ -97,7 +97,7 @@ cd Downloads\archived-twitter-scraper-main
 ### 4. Run The Scraper On Windows
 
 ```powershell
-py twitter_archive_scaper.py
+py twitter_archive_scraper.py
 ```
 
 ## macOS Setup
@@ -145,7 +145,7 @@ the project folder into the Terminal window and press Enter.
 ### 4. Run The Scraper On macOS
 
 ```bash
-python3 twitter_archive_scaper.py
+python3 twitter_archive_scraper.py
 ```
 
 ## Linux Setup
@@ -213,7 +213,7 @@ the project folder into the Terminal window and press Enter.
 ### 6. Run The Scraper On Linux
 
 ```bash
-python3 twitter_archive_scaper.py
+python3 twitter_archive_scraper.py
 ```
 
 ## Using The Interactive Scraper
@@ -262,10 +262,10 @@ be slow or rate-limited.
 Recommended beginner value:
 
 ```text
-2
+0.5
 ```
 
-For very large accounts, `3`, `5`, or `10` may be safer.
+For very large accounts, `1`, `3`, `5`, or `10` may be safer.
 
 ### Max-tweets
 
@@ -294,13 +294,13 @@ giving up and moving on.
 Recommended value:
 
 ```text
-30
+10
 ```
 
 For slow Internet Archive days, try:
 
 ```text
-60
+30
 ```
 
 ## Example Run
@@ -309,9 +309,9 @@ For slow Internet Archive days, try:
 Twitter handle: uwu_underground
 Output CSV filename [uwu_underground_tweets.csv]:
 Folder where tweet images should be saved [uwu_underground_images]:
-Delay in seconds [2.0]:
+Delay in seconds [0.5]:
 Max-tweets (0 means all tweets) [0]: 25
-Max timeout in seconds [30.0]:
+Max timeout in seconds [10.0]:
 ```
 
 In this example, blank answers use the default value shown in brackets.
@@ -323,13 +323,13 @@ Advanced users can provide everything in one command.
 Windows:
 
 ```powershell
-py twitter_archive_scaper.py --handle uwu_underground --output-csv uwu_underground_tweets.csv --image-folder uwu_underground_images --delay 2 --max-tweets 0 --timeout 30
+py twitter_archive_scraper.py --handle uwu_underground --output-csv uwu_underground_tweets.csv --image-folder uwu_underground_images --delay 0.5 --max-tweets 0 --timeout 10
 ```
 
 macOS and Linux:
 
 ```bash
-python3 twitter_archive_scaper.py --handle uwu_underground --output-csv uwu_underground_tweets.csv --image-folder uwu_underground_images --delay 2 --max-tweets 0 --timeout 30
+python3 twitter_archive_scraper.py --handle uwu_underground --output-csv uwu_underground_tweets.csv --image-folder uwu_underground_images --delay 0.5 --max-tweets 0 --timeout 10
 ```
 
 ## Output

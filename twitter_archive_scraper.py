@@ -31,7 +31,7 @@ from urllib.request import Request, urlopen
 
 CDX_ENDPOINT = "https://web.archive.org/cdx/search/cdx"
 AVAILABILITY_ENDPOINT = "https://archive.org/wayback/available"
-USER_AGENT = "TwitterArchiveScaper/1.0 (+https://web.archive.org/)"
+USER_AGENT = "TwitterArchiveScraper/1.0 (+https://web.archive.org/)"
 RETRY_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 
 
@@ -163,7 +163,7 @@ def print_banner() -> None:
     for line in BLOCK_ART["CULT"]:
         print(color(line, "96;1"))
     print()
-    print("Barbie Bitch Cult - The Twitter Archive Scaper".center(width))
+    print("Barbie Bitch Cult - The Twitter Archive Scraper".center(width))
     print(separator)
     print()
 
@@ -832,9 +832,9 @@ def main(argv: list[str] | None = None) -> int:
         handle = clean_handle(args.handle or prompt_value("Twitter handle"))
         output_csv = Path(args.output_csv or prompt_value("Output CSV filename", f"{handle}_tweets.csv"))
         image_folder = Path(args.image_folder or prompt_value("Folder where tweet images should be saved", f"{handle}_images"))
-        delay = args.delay if args.delay is not None else prompt_float("Delay in seconds", 2.0)
+        delay = args.delay if args.delay is not None else prompt_float("Delay in seconds", 0.5)
         max_tweets = args.max_tweets if args.max_tweets is not None else prompt_int("Max-tweets (0 means all tweets)", 0)
-        timeout = args.timeout if args.timeout is not None else prompt_float("Max timeout in seconds", 30.0)
+        timeout = args.timeout if args.timeout is not None else prompt_float("Max timeout in seconds", 10.0)
         run_scrape(handle, output_csv, image_folder, delay, max_tweets, timeout)
     except KeyboardInterrupt:
         print("\nInterrupted.")
